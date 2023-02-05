@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>cqrs_dotnet</RootNamespace>
+    <RootNamespace>CqrsDotnet</RootNamespace>
   </PropertyGroup>
 
 <PropertyGroup>
