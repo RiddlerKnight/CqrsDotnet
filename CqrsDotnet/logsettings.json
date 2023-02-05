@@ -1,0 +1,22 @@
+{
+  "Serilog": {
+    "Properties": {
+      "Application": "Cqrs-Dotnet"
+    },
+    "Using": [
+      "Serilog.Sinks.Console",
+      "Serilog.Expressions"
+    ],
+    "LevelSwitches": { "$controlSwitch": "Information" },
+    "MinimumLevel": {
+      "ControlledBy": "$controlSwitch",
+      "Default": "Debug"
+    },
+    "WriteTo": [
+      {
+        "Name": "Console"
+      }
+    ],
+    "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId", "WithProcessId" ]
+  }
+}

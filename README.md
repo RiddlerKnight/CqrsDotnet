@@ -1,0 +1,1 @@
+# CQRS pattern with Dotnet
