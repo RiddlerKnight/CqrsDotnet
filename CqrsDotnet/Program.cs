@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Serilog;
 using System.Reflection;
 using Application;
+using Microsoft.AspNetCore.HttpOverrides;
 
 static void SetupLogger(IConfiguration config)
 {
@@ -39,6 +40,10 @@ builder.Services.AddApiVersioning(options =>
 });
 builder.Services.AddSwaggerGen();
 builder.Host.UseSerilog();
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.All;
+});
 
 #endregion
 
@@ -46,6 +51,8 @@ builder.Host.UseSerilog();
 
 var app = builder.Build();
 SetupLogger(app.Configuration);
+
+app.UseForwardedHeaders();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
