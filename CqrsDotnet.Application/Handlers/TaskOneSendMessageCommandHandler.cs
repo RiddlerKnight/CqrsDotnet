@@ -1,8 +1,8 @@
-﻿using Application.Aggregators;
+﻿using CqrsDotnet.Application.Aggregators;
 using MediatR;
 using Serilog;
 
-namespace Application.Handlers
+namespace CqrsDotnet.Application.Handlers
 {
     public class TaskOneSendMessageCommandHandler : INotificationHandler<PublicMessageCommand>
     {

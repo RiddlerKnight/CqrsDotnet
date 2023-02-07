@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "cqrs-dotnet", "CqrsDotnet\CqrsDotnet.csproj", "{C41887E3-543C-494C-8799-8BF5220184D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "application", "Application\Application.csproj", "{1F54D9EB-5430-4830-8FDC-B1A059CDCC60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsDotnet.Application", "CqrsDotnet.Application\CqrsDotnet.Application.csproj", "{1F54D9EB-5430-4830-8FDC-B1A059CDCC60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsDotnet.Domain", "CqrsDotnet.Domain\CqrsDotnet.Domain.csproj", "{0BAF18FD-A573-4616-AFCC-1B4235835608}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{1F54D9EB-5430-4830-8FDC-B1A059CDCC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F54D9EB-5430-4830-8FDC-B1A059CDCC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F54D9EB-5430-4830-8FDC-B1A059CDCC60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BAF18FD-A573-4616-AFCC-1B4235835608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAF18FD-A573-4616-AFCC-1B4235835608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAF18FD-A573-4616-AFCC-1B4235835608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAF18FD-A573-4616-AFCC-1B4235835608}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

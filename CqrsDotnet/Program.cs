@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Serilog;
 using System.Reflection;
-using Application;
+using CqrsDotnet.Application;
 using Microsoft.AspNetCore.HttpOverrides;
 
 static void SetupLogger(IConfiguration config)
@@ -29,6 +29,7 @@ builder.Configuration.AddJsonFile("logsettings.json", false);
 
 builder.Services.AddControllers()
     .PartManager.ApplicationParts.Add(new AssemblyPart(Assembly.GetExecutingAssembly()));
+
 builder.Services.AddApplicationService(builder.Configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -38,6 +39,7 @@ builder.Services.AddApiVersioning(options =>
     options.ReportApiVersions = true;
     options.AssumeDefaultVersionWhenUnspecified = true;
 });
+
 builder.Services.AddSwaggerGen();
 builder.Host.UseSerilog();
 builder.Services.Configure<ForwardedHeadersOptions>(options =>

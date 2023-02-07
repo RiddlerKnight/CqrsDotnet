@@ -1,8 +1,8 @@
 ﻿using System.Net;
-using Application.Aggregators;
+using CqrsDotnet.Application.Aggregators;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Application.Controllers.v1;
+namespace CqrsDotnet.Application.Controllers.v1;
 
 [ApiVersion("1")]
 [Route("[controller]")]

@@ -1,10 +1,10 @@
 using System.Net;
-using Application.Aggregators;
+using CqrsDotnet.Application.Aggregators;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
 
-namespace Application.Handlers;
+namespace CqrsDotnet.Application.Handlers;
 
 public class TaskMessageSenderCommand : IRequestHandler<SendMessageCommand, IActionResult>
 {

@@ -1,8 +1,9 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+
 #pragma warning disable CS8618
 
-namespace Application.Aggregators;
+namespace CqrsDotnet.Application.Aggregators;
 
 public class SendMessageCommand : IRequest<IActionResult>
 {

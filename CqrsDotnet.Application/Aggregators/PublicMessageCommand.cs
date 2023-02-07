@@ -1,7 +1,8 @@
 ﻿using MediatR;
+
 #pragma warning disable CS8618
 
-namespace Application.Aggregators;
+namespace CqrsDotnet.Application.Aggregators;
 
 public class PublicMessageCommand : INotification
 {
