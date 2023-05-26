@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Serilog;
 using System.Reflection;
 using CqrsDotnet.Application;
+using CqrsDotnet.Infrastructure.Helpers;
 using Microsoft.AspNetCore.HttpOverrides;
 
 static void SetupLogger(IConfiguration config)
@@ -53,6 +54,7 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 
 var app = builder.Build();
 SetupLogger(app.Configuration);
+AppInfo.MakeLog(app.Configuration, app.Environment);
 
 app.UseForwardedHeaders();
 
