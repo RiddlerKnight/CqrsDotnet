@@ -25,6 +25,8 @@ static void SetupLogger(IConfiguration config)
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("logsettings.json", false);
+builder.Configuration.AddJsonFile($"logsettings.{builder.Environment.EnvironmentName}.json", true);
+builder.Configuration.AddJsonFile($"appsetting.kube.json", true);
 
 // Add services to the container.
 
