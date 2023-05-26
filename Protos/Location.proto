@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "CqrsDotnet.Infrastructure.ProtosModels";
+
+package Location;
+
+// The location service definition.
+service LocationGrpc {
+  rpc SyncLocation (LocationRequest) returns (LocationReply);
+}
+
+message LocationRequest {
+  string lat  = 1;
+  string long = 2;
+}
+
+message LocationReply {
+  string lat  = 1;
+  string long = 2;
+}

@@ -66,6 +66,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGrpcControllerFromApplicationService();
 
 app.Run();
 

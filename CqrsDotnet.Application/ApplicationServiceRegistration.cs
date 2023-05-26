@@ -1,5 +1,8 @@
 ﻿using System.Reflection;
+using CqrsDotnet.Application.GrpcControllers;
+using CqrsDotnet.Infrastructure;
 using MediatR;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,8 +15,19 @@ public static class ApplicationServiceRegistration
     {
         // Inject some services here.
         services.AddMediatR(Assembly.GetExecutingAssembly());
+        services.AddBaseServicesRegistration(configuration);
         
+        services.AddGrpc();
+        services.AddGrpcReflection();
+        services.AddGrpcSwagger();
+
         return services;
+    }
+
+    public static void MapGrpcControllerFromApplicationService(this WebApplication app)
+    {
+        app.MapGrpcService<LocationGrpcController>();
+        app.MapGrpcReflectionService();
     }
 }
 

@@ -1,3 +1,3 @@
-﻿namespace Domain;
+﻿namespace CqrsDotnet.Domain;
 
 public class DomainServiceRegistration { }

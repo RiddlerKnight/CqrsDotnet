@@ -15,9 +15,4 @@
   <ItemGroup>
     <ProjectReference Include="..\CqrsDotnet.Application\CqrsDotnet.Application.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
