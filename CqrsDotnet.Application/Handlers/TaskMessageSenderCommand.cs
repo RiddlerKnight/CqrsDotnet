@@ -1,5 +1,5 @@
-using System.Net;
 using CqrsDotnet.Application.Aggregators;
+using CqrsDotnet.Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Serilog;
@@ -11,6 +11,6 @@ public class TaskMessageSenderCommand : IRequestHandler<SendMessageCommand, IAct
     public async Task<IActionResult> Handle(SendMessageCommand request, CancellationToken cancellationToken)
     {
         Log.Information("SendMessageCommand Running with message : \"{Message}\"", request.Message);
-        return new StatusCodeResult((int)HttpStatusCode.Accepted);
+        return new JsonResult(new ResponseMessage($"received: {request.Message}"));
     }
 }
