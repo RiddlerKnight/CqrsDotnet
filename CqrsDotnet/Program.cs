@@ -24,8 +24,11 @@ static void SetupLogger(IConfiguration config)
 #region InitConfiguration(Startup)
 
 var builder = WebApplication.CreateBuilder(args);
+// ReSharper disable once StringLiteralTypo
 builder.Configuration.AddJsonFile("logsettings.json", false);
+// ReSharper disable once StringLiteralTypo
 builder.Configuration.AddJsonFile($"logsettings.{builder.Environment.EnvironmentName}.json", true);
+// ReSharper disable once StringLiteralTypo
 builder.Configuration.AddJsonFile($"appsettings.kube.json", true, true);
 
 // Add services to the container.
@@ -50,6 +53,11 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
     options.ForwardedHeaders = ForwardedHeaders.All;
 });
 
+builder.Services.Configure<WebSocketOptions>(options =>
+{
+    options.KeepAliveInterval = TimeSpan.FromSeconds(60);
+});
+
 #endregion
 
 #region Build And Run Api Server
@@ -71,6 +79,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 app.MapGrpcControllerFromApplicationService();
+app.UseWebSockets();
 
 app.Run();
 
