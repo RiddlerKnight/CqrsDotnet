@@ -2,6 +2,7 @@ using CqrsDotnet.Application.Aggregators;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
+using Serilog;
 
 namespace CqrsDotnet.Application.Controllers.WebSock;
 
@@ -25,6 +26,7 @@ public class WebSockController : ControllerBase
     {
         if (HttpContext.WebSockets.IsWebSocketRequest)
         {
+            Log.Information("=== Open WebSocket connection ===");
             using var webSocket = await HttpContext.WebSockets.AcceptWebSocketAsync();
             await Mediator.Send(new SimpleSockCommand{ WebSocket = webSocket});
         }
