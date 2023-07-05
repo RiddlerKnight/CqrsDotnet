@@ -3,7 +3,7 @@ assembly-file-versioning-scheme: MajorMinorPatchTag
 mode: ContinuousDeployment
 branches:
   production:
-    regex: ^production$
+    regex: ^master$
     #tag: ''
     increment: Minor
     source-branches: ['feature/*', 'hotfix/*']
@@ -12,7 +12,7 @@ branches:
     increment: Patch
   release:
     regex: ^release/.*
-    is-release-branch: false
+    is-release-branch: true
 ignore:
   sha: []
 merge-message-formats: {}
