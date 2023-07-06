@@ -5,4 +5,5 @@ This is an example dotnet project, which use .NET7, to testing RestApi/gRPC/Webs
 ## Build
 ```bash
 docker build -t cqrs-dotnet:test .
+
 ```
