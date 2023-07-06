@@ -13,6 +13,7 @@ branches:
   release:
     regex: ^release/.*
     is-release-branch: true
+    tag: beta
 ignore:
   sha: []
 merge-message-formats: {}
