@@ -6,7 +6,7 @@ branches:
     regex: ^master$
     #tag: ''
     increment: Minor
-    # source-branches: ['feature/*', 'hotfix/*'] # There are no source-branches from now.
+    source-branches: ['develop']
   develop:
     regex: ^develop$
     increment: Patch
