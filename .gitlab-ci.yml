@@ -1,0 +1,6 @@
+include:
+  - project: "jumpbox-academy-org/pipeline-templates/basic-template"
+    ref: "main"
+    file: "template.yml"
+
+# Use variable from CI/CD Variables

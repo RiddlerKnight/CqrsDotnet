@@ -3,16 +3,23 @@ assembly-file-versioning-scheme: MajorMinorPatchTag
 mode: ContinuousDeployment
 branches:
   production:
-    regex: ^master$
+    regex: ^master$|^main$
     #tag: ''
     increment: Minor
-    source-branches: ['feature/*', 'hotfix/*']
+    source-branches: ['develop' , 'release']
   develop:
-    regex: ^develop$
+    regex: ^dev(elop)?(ment)?$
+    mode: ContinuousDeployment
     increment: Patch
   release:
-    regex: ^release/.*
+    regex: ^releases?[/-]
+    source-branches: [ 'develop', 'main', 'support', 'release' ]
     is-release-branch: true
+    tag: beta
+  hotfix:
+    regex: ^hotfix(es)?[/-]
+    mode: ContinuousDelivery
+    tag: beta
 ignore:
   sha: []
 merge-message-formats: {}
