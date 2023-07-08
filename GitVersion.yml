@@ -19,7 +19,6 @@ branches:
   hotfix:
     regex: ^hotfix(es)?[/-]
     mode: ContinuousDelivery
-    tag: beta
 ignore:
   sha: []
 merge-message-formats: {}
