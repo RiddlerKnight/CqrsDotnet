@@ -6,19 +6,21 @@ branches:
     regex: ^master$|^main$
     #tag: ''
     increment: Minor
-    source-branches: ['develop' , 'release']
+    source-branches: ['release']
   develop:
     regex: ^dev(elop)?(ment)?$
     mode: ContinuousDeployment
     increment: Patch
   release:
     regex: ^releases?[/-]
-    source-branches: [ 'develop', 'main', 'support', 'release' ]
-    is-release-branch: true
+    source-branches: [ 'develop', 'release' , 'hotfix' ]
+    # is-release-branch: false -> this keeps ignore release branch name from version calculation.
+    is-release-branch: false
     tag: beta
+    increment: Patch
   hotfix:
     regex: ^hotfix(es)?[/-]
-    mode: ContinuousDelivery
+    source-branches: [ 'develop', 'production' ]
 ignore:
   sha: []
 merge-message-formats: {}
