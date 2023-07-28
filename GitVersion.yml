@@ -13,7 +13,7 @@ branches:
     increment: Patch
   release:
     regex: ^releases?[/-]
-    source-branches: [ 'develop', 'release' , 'hotfix' ]
+    source-branches: [ 'develop', 'release' , 'hotfix', 'feature' ]
     # is-release-branch: false -> this keeps ignore release branch name from version calculation.
     is-release-branch: false
     tag: beta
@@ -21,6 +21,9 @@ branches:
   hotfix:
     regex: ^hotfix(es)?[/-]
     source-branches: [ 'develop', 'production' ]
+  feature:
+    regex: ^feature(s)?$[/-]
+    mode: ContinuousDeployment
 ignore:
   sha: []
 merge-message-formats: {}
