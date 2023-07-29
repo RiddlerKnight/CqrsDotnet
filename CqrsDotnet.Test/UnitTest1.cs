@@ -16,4 +16,7 @@ public class UnitTest1
     
     [Fact]
     public void Test5() { }
+    
+    [Fact]
+    public void Test6() { }
 }
