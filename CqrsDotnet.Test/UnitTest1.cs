@@ -10,4 +10,7 @@ public class UnitTest1
     
     [Fact]
     public void Test3() { }
+    
+    [Fact]
+    public void Test4() { }
 }
