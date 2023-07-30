@@ -14,7 +14,10 @@ public static class ApplicationServiceRegistration
         IConfiguration configuration)
     {
         // Inject some services here.
-        services.AddMediatR(Assembly.GetExecutingAssembly());
+        services.AddMediatR(serviceConfiguration =>
+        {
+            serviceConfiguration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
+        });
         services.AddBaseServicesRegistration(configuration);
         
         services.AddGrpc();

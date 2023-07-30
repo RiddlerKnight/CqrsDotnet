@@ -7,7 +7,7 @@ namespace CqrsDotnet.Application.Handlers;
 
 public class TaskSimpleSockCommandHandler : IRequestHandler<SimpleSockCommand>
 {
-    public async Task<Unit> Handle(SimpleSockCommand request, CancellationToken cancellationToken)
+    public async Task Handle(SimpleSockCommand request, CancellationToken cancellationToken)
     {
         var buffer = new byte[1024 * 4];
         var connectionState = true;
@@ -32,7 +32,5 @@ public class TaskSimpleSockCommandHandler : IRequestHandler<SimpleSockCommand>
                 .SendAsync(new ArraySegment<byte>(sendByte, 0, sendByte.Length), 
                     result.MessageType ,result.EndOfMessage  , cancellationToken);
         }
-
-        return Unit.Value;
     }
 }
