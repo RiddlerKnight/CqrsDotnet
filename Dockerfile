@@ -12,12 +12,12 @@ COPY ./.git* ./
 COPY ./**/*.csproj .
 COPY *.sln ./
 RUN for file in $(ls *.csproj); do mkdir -p ./${file%.*}/ && mv $file ./${file%.*}/; done
-RUN (dotnet restore "CqrsDotnet.sln" --no-cache -s $NUGET_REGISTRY_URL) || (dotnet restore "CqrsDotnet.sln" --no-cache)
+RUN (dotnet restore "CqrsDotnet/CqrsDotnet.csproj" --no-cache -s $NUGET_REGISTRY_URL) || (dotnet restore "CqrsDotnet/CqrsDotnet.csproj" --no-cache)
 COPY . .
 
 FROM build AS publish
 ARG Configuration=Debug
-RUN dotnet publish -c $Configuration -o /app/publish
+RUN cd CqrsDotnet && dotnet publish -c $Configuration -o /app/publish
 
 FROM base AS final
 WORKDIR /app

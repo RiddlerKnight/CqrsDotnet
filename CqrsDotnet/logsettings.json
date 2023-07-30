@@ -3,10 +3,7 @@
     "Properties": {
       "Application": "CqrsDotnet"
     },
-    "Using": [
-      "Serilog.Sinks.Console",
-      "Serilog.Expressions"
-    ],
+    "Using": [],
     "LevelSwitches": { "$controlSwitch": "Information" },
     "MinimumLevel": {
       "ControlledBy": "$controlSwitch",

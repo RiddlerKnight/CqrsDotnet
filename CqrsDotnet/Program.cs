@@ -7,18 +7,11 @@ using Microsoft.AspNetCore.HttpOverrides;
 
 static void SetupLogger(IConfiguration config)
 {
-    try
-    {
-        Log.Logger = new LoggerConfiguration()
-            .ReadFrom.Configuration(config)
-            .CreateLogger();
+    Log.Logger = new LoggerConfiguration()
+        .ReadFrom.Configuration(config)
+        .CreateLogger();
 
-        Log.Information("Log Created");
-    }
-    catch (Exception e)
-    {
-        Log.Debug("Log Error! : {ExStr}", e.ToString());
-    }
+    Log.Information("Log Created");
 }
 
 #region InitConfiguration(Startup)

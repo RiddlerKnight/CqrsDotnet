@@ -1,0 +1,13 @@
+version: "3.9"
+
+services: 
+  cqrs-dotnet:
+    #image: gitlab.th1.proen.cloud:5000/jumpbox-academy-org/projects/test-pipelines/test-dotnet-pipeline:0.6.1-alpha.7-02195c4
+    build: .
+#    entrypoint: 
+#      - "sleep"
+#      - "999999"
+    environment:
+      "ASPNETCORE_ENVIRONMENT": "Development"
+      
+      #Unhandled exception. System.IO.FileNotFoundException: Could not load file or assembly 'Microsoft.Extensions.DependencyModel, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'. The system cannot find the file specified.
