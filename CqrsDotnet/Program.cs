@@ -22,7 +22,7 @@ builder.Configuration.AddJsonFile("logsettings.json", false);
 // ReSharper disable once StringLiteralTypo
 builder.Configuration.AddJsonFile($"logsettings.{builder.Environment.EnvironmentName}.json", true);
 // ReSharper disable once StringLiteralTypo
-builder.Configuration.AddJsonFile($"appsettings.kube.json", true, true);
+builder.Configuration.AddJsonFile($"config/appsettings.kube.json", true, true);
 
 // Add services to the container.
 
