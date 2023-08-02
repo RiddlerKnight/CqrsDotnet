@@ -1,5 +1,5 @@
 include:
-  - project: "jumpbox-academy-org/pipeline-templates/basic-template"
+  - project: "jumpbox-academy-org/blueprint/pipeline-templates/basic-template"
     ref: "main"
     file: "template.yml"
 
