@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Serilog;
 using System.Reflection;
 using CqrsDotnet.Application;
+using CqrsDotnet.Application2;
 using CqrsDotnet.Infrastructure.Helpers;
 using Microsoft.AspNetCore.HttpOverrides;
 
@@ -30,6 +31,7 @@ builder.Services.AddControllers()
     .PartManager.ApplicationParts.Add(new AssemblyPart(Assembly.GetExecutingAssembly()));
 
 builder.Services.AddApplicationService(builder.Configuration);
+builder.Services.AddApplication2Service(builder.Configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 

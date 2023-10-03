@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsDotnet.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsDotnet.Test", "CqrsDotnet.Test\CqrsDotnet.Test.csproj", "{0268E137-2710-48B1-B354-4ECEC7202F2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsDotnet.Application2", "CqrsDotnet.Application2\CqrsDotnet.Application2.csproj", "{72B3CAE9-AE15-4EE5-B5BD-ACF118640ACE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0268E137-2710-48B1-B354-4ECEC7202F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0268E137-2710-48B1-B354-4ECEC7202F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0268E137-2710-48B1-B354-4ECEC7202F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72B3CAE9-AE15-4EE5-B5BD-ACF118640ACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72B3CAE9-AE15-4EE5-B5BD-ACF118640ACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72B3CAE9-AE15-4EE5-B5BD-ACF118640ACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72B3CAE9-AE15-4EE5-B5BD-ACF118640ACE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

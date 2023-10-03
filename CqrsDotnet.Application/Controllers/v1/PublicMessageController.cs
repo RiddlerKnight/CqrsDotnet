@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using CqrsDotnet.Application.Aggregators;
+using CqrsDotnet.Infrastructure.Bases;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CqrsDotnet.Application.Controllers.v1;

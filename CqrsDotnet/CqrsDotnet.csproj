@@ -13,6 +13,7 @@
 </PropertyGroup>
   
   <ItemGroup>
+    <ProjectReference Include="..\CqrsDotnet.Application2\CqrsDotnet.Application2.csproj" />
     <ProjectReference Include="..\CqrsDotnet.Application\CqrsDotnet.Application.csproj" />
   </ItemGroup>
 </Project>

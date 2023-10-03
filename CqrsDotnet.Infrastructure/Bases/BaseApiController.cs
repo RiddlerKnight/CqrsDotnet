@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CqrsDotnet.Application.Controllers
+namespace CqrsDotnet.Infrastructure.Bases
 {
     [ApiController]
     public abstract class BaseApiController : ControllerBase
