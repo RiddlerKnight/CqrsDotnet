@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>CqrsDotnet</RootNamespace>
@@ -15,5 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CqrsDotnet.Application2\CqrsDotnet.Application2.csproj" />
     <ProjectReference Include="..\CqrsDotnet.Application\CqrsDotnet.Application.csproj" />
+    <ProjectReference Include="..\CqrsDotnet.Persistence\CqrsDotnet.Persistence.csproj" />
   </ItemGroup>
 </Project>

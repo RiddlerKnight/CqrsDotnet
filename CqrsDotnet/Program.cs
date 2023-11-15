@@ -4,6 +4,7 @@ using System.Reflection;
 using CqrsDotnet.Application;
 using CqrsDotnet.Application2;
 using CqrsDotnet.Infrastructure.Helpers;
+using CqrsDotnet.Persistence;
 using Microsoft.AspNetCore.HttpOverrides;
 
 static void SetupLogger(IConfiguration config)
@@ -29,6 +30,8 @@ builder.Configuration.AddJsonFile($"config/appsettings.kube.json", true, true);
 
 builder.Services.AddControllers()
     .PartManager.ApplicationParts.Add(new AssemblyPart(Assembly.GetExecutingAssembly()));
+
+builder.Services.AddPersistenceRegistration(builder.Configuration);
 
 builder.Services.AddApplicationService(builder.Configuration);
 builder.Services.AddApplication2Service(builder.Configuration);
