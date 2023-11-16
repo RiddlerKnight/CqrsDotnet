@@ -56,6 +56,10 @@ builder.Services.Configure<WebSocketOptions>(options =>
     options.KeepAliveInterval = TimeSpan.FromSeconds(60);
 });
 
+builder.Services.AddOpenTelemetry()
+    .WithTracing()
+    .WithMetrics();
+
 #endregion
 
 #region Build And Run Api Server
