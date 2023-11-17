@@ -17,9 +17,15 @@
 //      {
 //        "Name": "OpenTelemetry",
 //        "endpoint": "",
-//        "protocol": "OtlpProtocol.HttpProtobuf"
+//        "protocol": "Grpc"
 //      }
     ],
     "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId", "WithProcessId" ]
+  },
+  "Exporter":{
+    "Tracing": {
+      "EndPoint": "http://localhost:4317",
+      "Protocol": "Grpc"
+    }
   }
 }

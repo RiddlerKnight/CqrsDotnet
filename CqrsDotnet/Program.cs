@@ -3,9 +3,11 @@ using Serilog;
 using System.Reflection;
 using CqrsDotnet.Application;
 using CqrsDotnet.Application2;
+using CqrsDotnet.Infrastructure.ConfigSchema;
 using CqrsDotnet.Infrastructure.Helpers;
 using CqrsDotnet.Persistence;
 using Microsoft.AspNetCore.HttpOverrides;
+using OpenTelemetry.Trace;
 
 static void SetupLogger(IConfiguration config)
 {
@@ -56,9 +58,11 @@ builder.Services.Configure<WebSocketOptions>(options =>
     options.KeepAliveInterval = TimeSpan.FromSeconds(60);
 });
 
+var OtelConfig = new OtelConfig();
+builder.Configuration.Bind("Otel", OtelConfig);
+
 builder.Services.AddOpenTelemetry()
-    .WithTracing()
-    .WithMetrics();
+    .AddTracing(builder.Configuration);
 
 #endregion
 
