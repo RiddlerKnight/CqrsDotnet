@@ -7,12 +7,12 @@ using CqrsDotnet.Infrastructure.ConfigSchema;
 using CqrsDotnet.Infrastructure.Helpers;
 using CqrsDotnet.Persistence;
 using Microsoft.AspNetCore.HttpOverrides;
-using OpenTelemetry.Trace;
 
 static void SetupLogger(IConfiguration config)
 {
     Log.Logger = new LoggerConfiguration()
         .ReadFrom.Configuration(config)
+        .AddAdditionalOtelConfig(config)
         .CreateLogger();
 
     Log.Information("Log Created");
@@ -57,9 +57,6 @@ builder.Services.Configure<WebSocketOptions>(options =>
 {
     options.KeepAliveInterval = TimeSpan.FromSeconds(60);
 });
-
-var OtelConfig = new OtelConfig();
-builder.Configuration.Bind("Otel", OtelConfig);
 
 builder.Services.AddOpenTelemetry()
     .AddTracing(builder.Configuration);

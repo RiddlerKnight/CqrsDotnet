@@ -12,18 +12,20 @@
     "WriteTo": [
       {
         "Name": "Console"
+      },
+      {
+        "Name": "OpenTelemetry",
+        "Args": {
+          "Endpoint": "http://otel-opentelemetry-collector.otel-nonprd.svc:4317",
+          "Protocol": "Grpc"
+        }
       }
-//    ,
-//      {
-//        "Name": "OpenTelemetry",
-//        "endpoint": "",
-//        "protocol": "Grpc"
-//      }
     ],
     "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId", "WithProcessId" ]
   },
-  "Exporter":{
-    "Tracing": {
+  "Exporters":{
+    "Otel": {
+      "Enabled": false,
       "EndPoint": "http://localhost:4317",
       "Protocol": "Grpc"
     }
