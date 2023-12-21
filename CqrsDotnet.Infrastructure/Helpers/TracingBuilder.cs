@@ -26,7 +26,6 @@ public static class TracingBuilder
             providerBuilder.AddSource(appName);
             providerBuilder.AddAspNetCoreInstrumentation(options =>
             {
-                options.EnableGrpcAspNetCoreSupport = true;
                 options.RecordException = true;
             });
             providerBuilder.AddOtlpExporter(options =>

@@ -12,13 +12,6 @@
     "WriteTo": [
       {
         "Name": "Console"
-      },
-      {
-        "Name": "OpenTelemetry",
-        "Args": {
-          "Endpoint": "http://otel-opentelemetry-collector.otel-nonprd.svc:4317",
-          "Protocol": "Grpc"
-        }
       }
     ],
     "Enrich": [ "FromLogContext", "WithMachineName", "WithThreadId", "WithProcessId" ]
