@@ -1,6 +1,7 @@
 using CqrsDotnet.Infrastructure.ConfigSchema;
 using Microsoft.Extensions.Configuration;
 using Serilog;
+using Serilog.Sinks.OpenTelemetry;
 
 namespace CqrsDotnet.Infrastructure.Helpers;
 
@@ -26,7 +27,8 @@ public static class SerilogAdditionalOtelConfig
             {
                 options.Endpoint = otelConfig.EndPoint;
                 options.Protocol = otelConfig.Protocol;
-            });  
+                options.IncludedData = IncludedData.TraceIdField | IncludedData.SpanIdField;
+            });
         }
 
         return loggerConfiguration;
