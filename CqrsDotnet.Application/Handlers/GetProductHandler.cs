@@ -16,7 +16,8 @@ public class GetProductHandler : IRequestHandler<GetProductCommand, IActionResul
     }
     public async Task<IActionResult> Handle(GetProductCommand request, CancellationToken cancellationToken)
     {
-        var result = await _dbContext.Products.Where(product => product.Name == request.Name ).ToListAsync();
+        var result = await _dbContext.Products.Where(product => product.Name == request.Name )
+            .ToListAsync(cancellationToken);
 
         return new JsonResult(result);
     }

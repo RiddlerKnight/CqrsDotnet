@@ -1,3 +1,4 @@
+using System.Reflection;
 using CqrsDotnet.Infrastructure.ConfigSchema;
 using Microsoft.Extensions.Configuration;
 using Serilog;
@@ -28,6 +29,13 @@ public static class SerilogAdditionalOtelConfig
                 options.Endpoint = otelConfig.EndPoint;
                 options.Protocol = otelConfig.Protocol;
                 options.IncludedData = IncludedData.TraceIdField | IncludedData.SpanIdField;
+                options.ResourceAttributes = new Dictionary<string, object>
+                {
+                    ["service.name"] = Assembly.GetEntryAssembly()?.FullName?.Split(",", StringSplitOptions.TrimEntries)[0] ?? "no_service_name",
+                    ["service.version"] = Assembly.GetEntryAssembly()?.FullName?
+                        .Split(",", StringSplitOptions.TrimEntries)[1]
+                        .Split("=", StringSplitOptions.TrimEntries)[1] ?? "no_version"
+                };
             });
         }
 

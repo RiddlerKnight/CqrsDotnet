@@ -16,7 +16,7 @@ public class ProductController : BaseApiController
     }
     
     [HttpPost]
-    public async Task<IActionResult> Get([FromQuery] AddProductCommand command)
+    public async Task<IActionResult> Post([FromQuery] AddProductCommand command)
     {
         var result = await Mediator.Send(command);
         return result;
